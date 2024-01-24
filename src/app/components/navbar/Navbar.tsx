@@ -1,0 +1,28 @@
+import Link from "next/link";
+import Container from "../Container";
+import { Cinzel } from "next/font/google";
+
+const cinzel = Cinzel({ subsets: ["latin"], weight: "400" });
+
+const Navbar = () => {
+  return (
+    <div className="sticky top-0 z-30 w-full bg-slate-300 shadow-sm ">
+      <div className="py-4 border-b-[1px]">
+        <Container>
+          <div className="flex items-center justify-between gap-3 md:gap-0">
+            <Link href="/" className={`${cinzel.className} text-xl`}>
+              Girls
+            </Link>
+            <div className="hidden md:block">Search</div>
+            <div className="flex items-center gap-8 md:gap-12">
+              <div>Cart</div>
+              <div>UserMenu</div>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
