@@ -35,6 +35,7 @@ const Button: React.FC<ButtonProps> = ({
     items-center
     justify-center
     gap-2
+    border-violet-300
     ${outline ? "bg-white" : "bg-violet-400"}
     ${outline ? "text-violet-400" : "text-white"}
     ${small ? "text-sm font-light" : "text-lg font-medium"}

@@ -1,5 +1,6 @@
 import ProductDetails from "./ProductDetails";
-import { product } from "@/utils/product";
+// import { product } from "@/utils/product";
+import { products } from "@/utils/products";
 import Container from "@/app/components/Container";
 import ListRating from "./ListRating";
 
@@ -8,6 +9,7 @@ interface ProductPageProps {
 }
 
 const ProductPage = ({ params }: { params: ProductPageProps }) => {
+  const product = products.find((product) => product.id === params.productId);
   return (
     <div className="p-8">
       <Container>

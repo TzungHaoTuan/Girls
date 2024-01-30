@@ -26,6 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
             src={data.images[0].image}
             alt={data.name}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="w-full h-full object-contain"
           ></Image>
         </div>
