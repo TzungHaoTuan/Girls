@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Heading from "../components/Heading";
 import Input from "../components/input/Input";
 import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
@@ -11,8 +11,13 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { SafeUser } from "../../../types";
 
-const RegisterForm = () => {
+interface RegisterForm {
+  currentUser: SafeUser | null | undefined;
+}
+
+const RegisterForm: React.FC<RegisterForm> = ({ currentUser }) => {
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
@@ -27,6 +32,13 @@ const RegisterForm = () => {
   });
 
   const router = useRouter();
+
+  useEffect(() => {
+    if (currentUser) {
+      router.push("/cart");
+      router.refresh();
+    }
+  });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
@@ -56,14 +68,21 @@ const RegisterForm = () => {
         setIsLoading(false);
       });
   };
+
+  if (currentUser) {
+    return <p className="text-center">Logged in. Redirecting...</p>;
+  }
+
   return (
     <>
       <Heading title="Sign up for Girls" />
       <Button
-        label="Sign up with Google"
+        label="Continue with Google"
         outline
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => {
+          signIn("google");
+        }}
       />
       <hr className="w-full h-px bg-violet-300" />
       <Input
