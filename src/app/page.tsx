@@ -1,4 +1,4 @@
-import { products } from "@/utils/products";
+import { products } from "@/src/utils/products";
 import Container from "./components/Container";
 import HomeBanner from "./components/HomeBanner";
 import ProductCard from "./components/products/ProductCard";

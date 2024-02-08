@@ -1,7 +1,7 @@
 import ProductDetails from "./ProductDetails";
 // import { product } from "@/utils/product";
-import { products } from "@/utils/products";
-import Container from "@/app/components/Container";
+import { products } from "@/src/utils/products";
+import Container from "@/src/app/components/Container";
 import ListRating from "./ListRating";
 
 interface ProductPageProps {

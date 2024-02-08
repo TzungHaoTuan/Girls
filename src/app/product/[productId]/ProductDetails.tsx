@@ -1,13 +1,13 @@
 "use client";
-import { formatPrice } from "@/utils/formatPrice";
+import { formatPrice } from "@/src/utils/formatPrice";
 import { Rating } from "@mui/material";
 import { useCallback, useState, useEffect } from "react";
-import SetColor from "@/app/components/products/SetColor";
-import SetQuantity from "@/app/components/products/SetQuantity";
-import Button from "@/app/components/products/Button";
+import SetColor from "@/src/app/components/products/SetColor";
+import SetQuantity from "@/src/app/components/products/SetQuantity";
+import Button from "@/src/app/components/products/Button";
 import { CiShoppingCart } from "react-icons/ci";
-import ProductImage from "@/app/components/products/ProductImage";
-import { useCart } from "@/hooks/useCart";
+import ProductImage from "@/src/app/components/products/ProductImage";
+import { useCart } from "@/src/hooks/useCart";
 import { useRouter } from "next/navigation";
 import { MdCheckCircle } from "react-icons/md";
 

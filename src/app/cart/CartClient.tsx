@@ -1,14 +1,21 @@
 "use client";
-import { useCart } from "@/hooks/useCart";
+import { useCart } from "@/src/hooks/useCart";
 import Heading from "../components/Heading";
 import Button from "../components/products/Button";
 import Link from "next/link";
 import { MdArrowBack } from "react-icons/md";
 import ProductContent from "./ProductContent";
-import { formatPrice } from "@/utils/formatPrice";
+import { formatPrice } from "@/src/utils/formatPrice";
+import { SafeUser } from "@/types";
+import { useRouter } from "next/navigation";
 
-const CartClient = () => {
+interface CartClientProps {
+  currentUser: SafeUser | null | undefined;
+}
+
+const CartClient: React.FC<CartClientProps> = ({ currentUser }) => {
   const { cartProducts, cartTotalPrice, handleClearCart } = useCart();
+  const router = useRouter();
 
   return (
     <>
@@ -44,7 +51,15 @@ const CartClient = () => {
               <p className="text-violet-600">
                 Taxes and shipping calculated at checkout
               </p>
-              <Button label="checkout" onClick={() => {}} />
+              <Button
+                label={currentUser ? "Checkout" : "Login To Checkout"}
+                outline={currentUser ? false : true}
+                onClick={() => {
+                  currentUser
+                    ? router.push("/checkout")
+                    : router.push("/login");
+                }}
+              />
               <div>
                 <Link
                   href={"/"}

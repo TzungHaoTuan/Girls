@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import CartProvider from "@/provider/CartProvider";
+import CartProvider from "@/src/provider/CartProvider";
 import { Toaster } from "react-hot-toast";
 
 // const inter = Inter({ subsets: ["latin"] });
