@@ -20,7 +20,7 @@ export default async function getProducts(params: ProductParams) {
             query.category = category
         }
 
-        const product = prisma.product.findMany({
+        const products = prisma.product.findMany({
             where: {
                 ...query,
                 OR: [
@@ -49,7 +49,7 @@ export default async function getProducts(params: ProductParams) {
 
         })
 
-        return product
+        return products
     } catch (error: any) {
         throw new Error(error)
     }
