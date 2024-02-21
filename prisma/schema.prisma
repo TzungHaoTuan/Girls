@@ -38,7 +38,7 @@ model User {
     role           Role      @default(USER)
     accounts       Account[]
     orders         Order[]
-    review         Review[]
+    reviews        Review[]
 }
 
 model Product {

@@ -3,10 +3,15 @@ import Heading from "@/src/app/components/Heading";
 import { Rating } from "@mui/material";
 import moment from "moment";
 import Avatar from "@/src/app/components/products/Avatar";
+import { Product, Review } from "@prisma/client";
 interface ListRatingProps {
-  product: any;
+  product: Product & {
+    reviews: Review[];
+  };
 }
 const ListRating: React.FC<ListRatingProps> = ({ product }) => {
+  if (product.reviews.length === 0) return null;
+
   return (
     <div>
       <Heading title="Product Review" />
