@@ -6,6 +6,7 @@ import UserMenu from "./UserMenu";
 import { getCurrentUser } from "../../../../actions/getCurrentUser";
 import CategoryBar from "./CategoryBar";
 import Search from "./Search";
+import { Suspense } from "react";
 
 const cinzel = Cinzel({ subsets: ["latin"], weight: "400" });
 
@@ -30,7 +31,9 @@ const Navbar = async () => {
           </div>
         </Container>
       </div>
-      <CategoryBar />
+      <Suspense>
+        <CategoryBar />
+      </Suspense>
     </div>
   );
 };

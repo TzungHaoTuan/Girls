@@ -3,6 +3,7 @@ import { categories } from "@/src/utils/Categories";
 import CategoryItem from "./CategoryItem";
 import Container from "../Container";
 import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const CategoryBar = () => {
   //useRouter
@@ -17,15 +18,17 @@ const CategoryBar = () => {
       <Container>
         <div className="flex items-center justify-between pt-4 overflow-x-auto">
           {categories.map((item) => (
-            <CategoryItem
-              key={item.label}
-              label={item.label}
-              icon={item.icon}
-              selected={
-                item.label === category ||
-                (item.label === "All" && category === null)
-              }
-            />
+            <Suspense>
+              <CategoryItem
+                key={item.label}
+                label={item.label}
+                icon={item.icon}
+                selected={
+                  item.label === category ||
+                  (item.label === "All" && category === null)
+                }
+              />
+            </Suspense>
           ))}
         </div>
       </Container>
