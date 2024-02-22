@@ -18,9 +18,8 @@ const CategoryBar = () => {
       <Container>
         <div className="flex items-center justify-between pt-4 overflow-x-auto">
           {categories.map((item) => (
-            <Suspense>
+            <Suspense key={item.label}>
               <CategoryItem
-                key={item.label}
                 label={item.label}
                 icon={item.icon}
                 selected={
