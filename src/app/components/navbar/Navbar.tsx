@@ -4,8 +4,8 @@ import { Cinzel } from "next/font/google";
 import Cart from "./Cart";
 import UserMenu from "./UserMenu";
 import { getCurrentUser } from "../../../../actions/getCurrentUser";
-import Categories from "./CategoryBar";
 import CategoryBar from "./CategoryBar";
+import Search from "./Search";
 
 const cinzel = Cinzel({ subsets: ["latin"], weight: "400" });
 
@@ -20,7 +20,9 @@ const Navbar = async () => {
             <Link href="/" className={`${cinzel.className} text-xl`}>
               Girls
             </Link>
-            <div className="hidden md:block">Search</div>
+            <div className="hidden md:block">
+              <Search />
+            </div>
             <div className="flex items-center gap-8 md:gap-12">
               <Cart />
               <UserMenu currentUser={currentUser} />

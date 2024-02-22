@@ -8,7 +8,6 @@ export interface ProductParams {
 export default async function getProducts(params: ProductParams) {
     try {
         const { category, searchTerm } = params
-
         let searchString = searchTerm
         if (!searchTerm) {
             searchString = ""
@@ -19,7 +18,6 @@ export default async function getProducts(params: ProductParams) {
         if (category) {
             query.category = category
         }
-
         const products = prisma.product.findMany({
             where: {
                 ...query,
@@ -28,11 +26,13 @@ export default async function getProducts(params: ProductParams) {
                         name: {
                             contains: searchString,
                             mode: "insensitive"
-                        },
+                        }
+                    },
+                    {
                         description: {
                             contains: searchString,
                             mode: "insensitive"
-                        },
+                        }
                     }
                 ]
             },
@@ -48,7 +48,6 @@ export default async function getProducts(params: ProductParams) {
             }
 
         })
-
         return products
     } catch (error: any) {
         throw new Error(error)
