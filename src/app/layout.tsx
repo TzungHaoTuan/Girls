@@ -31,7 +31,7 @@ export default async function RootLayout({
           }}
         />
         <CartProvider>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen text-slate-600">
             <Navbar />
             <main className="flex-grow">{children}</main>
             <Footer />

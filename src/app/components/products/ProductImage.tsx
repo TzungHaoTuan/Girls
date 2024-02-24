@@ -17,7 +17,7 @@ const ProductImage: React.FC<ProductImageProps> = ({
 }) => {
   return (
     <div className="flex flex-col items-center h-full">
-      <div className="relative h-[440px] aspect-square">
+      <div className="relative h-[400px] aspect-square">
         <Image
           src={cartProduct.selectedImage.image}
           alt={cartProduct.name}

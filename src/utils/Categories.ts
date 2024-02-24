@@ -1,5 +1,6 @@
-import { AiFillPhone, AiOutlineDesktop, AiOutlineLaptop } from "react-icons/ai";
-import { MdOutlineKeyboard, MdStorefront, MdTv, MdWatch } from "react-icons/md";
+import { MdStorefront } from "react-icons/md";
+import { GiLargeDress, GiPoloShirt, GiArmoredPants, GiHighHeel, GiShoulderBag } from "react-icons/gi";
+
 
 export const categories = [
     {
@@ -7,27 +8,23 @@ export const categories = [
         icon: MdStorefront
     },
     {
-        label: "Phone",
-        icon: AiFillPhone
+        label: "Tops",
+        icon: GiPoloShirt
     },
     {
-        label: "Laptop",
-        icon: AiOutlineLaptop
+        label: "Bottoms",
+        icon: GiArmoredPants
     },
     {
-        label: "Desktop",
-        icon: AiOutlineDesktop
+        label: "Dresses",
+        icon: GiLargeDress
     },
     {
-        label: "Watch",
-        icon: MdWatch
+        label: "Heels",
+        icon: GiHighHeel
     },
     {
-        label: "TV",
-        icon: MdTv
-    },
-    {
-        label: "Accessories",
-        icon: MdOutlineKeyboard
+        label: "Bags",
+        icon: GiShoulderBag
     },
 ]

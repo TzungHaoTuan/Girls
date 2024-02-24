@@ -25,13 +25,11 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
       let currentQuery = {};
       if (params) {
         currentQuery = queryString.parse(params.toString());
-        //   console.log(queryString.parse(params.toString()));
       }
       const updatedQuery: any = {
         ...currentQuery,
         category: label,
       };
-      console.log(updatedQuery);
 
       const url = queryString.stringifyUrl(
         {
@@ -42,7 +40,6 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
           skipNull: true,
         }
       );
-      console.log(url);
 
       router.push(url);
     }

@@ -27,7 +27,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           <Avatar src={currentUser?.image} />
         </div>
         {isMenuOpened && (
-          <div className="absolute right-0 top-12 w-[160px] flex flex-col text-sm bg-white rounded-md shadow-md overflow-hidden cursor-pointer">
+          <div className="absolute right-0 top-12 w-[160px] flex flex-col text-sm  bg-white rounded-md shadow-md overflow-hidden cursor-pointer">
             {currentUser ? (
               <div>
                 <Link href="/orders">

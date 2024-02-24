@@ -4,7 +4,7 @@ import { formatPrice } from "@/src/utils/formatPrice";
 import Status from "../../components/products/Status";
 import { MdAccessTimeFilled, MdDeliveryDining, MdDone } from "react-icons/md";
 import moment from "moment";
-import OrderItem from "./OrderProduct";
+import OrderProduct from "./OrderProduct";
 
 interface OrderDetailsProps {
   order: Order;
@@ -83,7 +83,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({ order }) => {
         </div>
         {order.products &&
           order.products.map((product) => (
-            <OrderItem key={product.id} product={product} />
+            <OrderProduct key={product.id} product={product} />
           ))}
       </div>
     </div>
